@@ -5,6 +5,10 @@ public class Triangle {
     int canh2;
     int canh3;
 
+    public Triangle(){
+        System.out.println("Constructor...");
+    };
+
     public int getCanh1() {
         return canh1;
     }

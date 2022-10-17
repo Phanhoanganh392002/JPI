@@ -14,13 +14,11 @@ public class Main {
        // Scanner sc = new Scanner(System.in);
        // Fraction tx = new Fraction(sc.nextInt(),sc.nextInt());
 
-        Account user = new Account("a1","abc xyz",100);
-        Account user2 = new Account("b1","abc xyz",100);
 
-        user.credit(100);
+        Domestic vn=new Domestic(1,"abc","01-01-2022","kinh doanh",150);
+        System.out.print(vn.TienDien());
 
-        user.transferTo(user2,50);
-        System.out.println(user.getBalance());
-        System.out.println(user2.getBalance());
+        Foreign nn = new Foreign(4,"asd123","01-01-2022",50,"usa");
+        System.out.println(nn.TienDien());
     }
 }

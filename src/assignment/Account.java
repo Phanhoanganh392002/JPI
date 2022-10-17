@@ -1,22 +1,24 @@
 package assignment;
 
 public class Account {
-    String id;
-    String name;
-    double balance;
+    private Integer id;
+    private String name;
+    private Double balance;
 
-    public Account(){}
-    public Account(String id,String name,double balance){
+    public Account() {
+    }
+
+    public Account(Integer id, String name, Double balance) {
         this.id = id;
         this.name = name;
         this.balance = balance;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -28,36 +30,35 @@ public class Account {
         this.name = name;
     }
 
-    public double getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 
     public void credit(int amount){
-        if(amount >= 0){
-            this.setBalance(this.balance + amount);
+        // setBalance(getBalance()+ (amount>0?amount:0));
+        if(amount>0){
+            double newBalance = getBalance() + amount;
+            setBalance(newBalance);
         }else{
-            System.out.println("Invalid amount");
+            double newBalance = getBalance() + 0;
+            setBalance(newBalance);
         }
     }
 
     public void debit(int amount){
-        if (amount >= 0){
-            this.setBalance(this.balance - amount);
-        }else {
-            System.out.println("Invalid amount");
+        //setBalance(getBalance()-(amount>0&&getBalance()>=amount?amount:0));
+        if(amount > 0 && getBalance() > amount){
+            double newBalance = getBalance() - amount;
+            setBalance(newBalance);
         }
     }
 
-    public void transferTo(Account user2, int amount){
-        if (amount >= 0 && this.balance>amount){
-            this.debit(amount);
-            user2.credit(amount);
-        }else {
-            System.out.println("Cannot make Transaction: not enough monney left");
-        }
+    public void transferTo(Account ac,int amount){
+        ac.setBalance(ac.getBalance()+ (amount>0&&getBalance()>=amount?amount:0));
+        this.debit(amount);
     }
 }

@@ -1,18 +1,10 @@
-package assignment;
+package javafx;
 
-
-//public class Main {
-   // public static void main(String[] args){
-
-   // }
-//}
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.util.Objects;
 
 public class Main extends Application {
 
@@ -22,8 +14,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("contact1.fxml")));
-        primaryStage.setTitle("Assignment JavaFX");
+        Parent root = FXMLLoader.load(getClass().getResource("contact.fxml"));
+        primaryStage.setTitle("T2204M JavaFX");
         primaryStage.setScene(new Scene(root,800,600));
         primaryStage.show();
     }

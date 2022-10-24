@@ -1,37 +1,34 @@
 package assignment;
 
+import com.sun.deploy.net.MessageHeader;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class ContactController {
     public TextField txtName;
-
-    public Text strName;
     public TextField txtEmail;
-    public Text strEmail;
     public TextField txtAddress;
-    public Text strAddress;
     public TextField txtAge;
-    public Text strAge;
     public TextField txtPhone;
-    public Text StrPhone;
 
+    private ObservableList<javafx.Contact> ls = FXCollections.observableArrayList();
 
     public void submit(ActionEvent actionEvent) {
         String name = txtName.getText();
-        strName.setText(name);
-
         String email = txtEmail.getText();
-        strEmail.setText(email);
-
         String address = txtAddress.getText();
-        strAddress.setText(address);
-
         String age = txtAge.getText();
-        strAge.setText(age);
-
         String phone = txtPhone.getText();
-        StrPhone.setText(phone);
+        Contact ct = new Contact(name,email,address,age,phone);
+        ls.add(ct);
+       print();
+}
+
+    public void print(){
+        lv.setItems(ls);
     }
 }

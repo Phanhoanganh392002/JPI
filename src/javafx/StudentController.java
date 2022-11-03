@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -31,7 +32,7 @@ public class StudentController {
             Integer mark = Integer.parseInt(txtMark.getText());
             if(mark < 0 || mark > 10)
                 throw new Exception("Vui lòng nhập điểm trong khoảng 0 -> 10");
-            ls.add(new Student(name,email,mark));
+            //ls.add(new Student(name,email,mark));
             lvStudents.setItems(ls);
         }catch (Exception e){
             Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -62,10 +62,8 @@ public class Complex {
         return multiply(a, new Complex(_re / scale, -_im / scale));
     }
 
-    public String toString(){
-        if (im == 0) return re + "";
-        if (re == 0) return im + "i";
-        if (im < 0) return re + "-" + (-im) + "i";
-        return re + " + " + im + "i";
+    public String toString() {
+        String ifMinusImaginaryPart = getIm() < 0 ? " - " : " + " ;
+        return "Complete process. Result is: " + getRe() + ifMinusImaginaryPart + Math.abs(getIm()) + "i";
     }
 }

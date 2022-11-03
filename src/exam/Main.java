@@ -17,20 +17,20 @@ public class Main {
         System.out.println("Nhap so ao 2:");
         sp2.setIm(sc.nextInt());
 
-        Complex spAdd = new Complex();
+        Complex spAdd ;
         spAdd = Complex.add(sp1,sp2);
-        System.out.println("Complex add:");
+        System.out.println(spAdd);
 
-        Complex spSubtract = new Complex();
+        Complex spSubtract ;
         spSubtract = Complex.subtract(sp1,sp2);
+        System.out.println(spSubtract);
 
-
-        Complex spMultiply = new Complex();
+        Complex spMultiply ;
         spMultiply = Complex.multiply(sp1,sp2);
+        System.out.println(spMultiply);
 
-
-        Complex spDivide = new Complex();
+        Complex spDivide ;
         spDivide = Complex.divide(sp1,sp2);
-
+        System.out.println(spDivide);
     }
 }
